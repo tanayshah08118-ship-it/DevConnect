@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <title>DevConnect</title>
+  
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <!-- Bootstrap Icons 1.11.3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!--1. NAVBAR & NAVIGATION-->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top shadow-sm navbar-custom" aria-label="Main navigation">
+      <div class="container">
+        <!-- Mobile Search Trigger Button (Only visible on screens < 576px) -->
+          <button 
+            class="btn btn-light btn-sm d-sm-none border-0 rounded-circle text-muted ms-auto me-2" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#mobileSearchBar" 
+            aria-expanded="false" 
+            aria-controls="mobileSearchBar"
+            aria-label="Open search"
+            style="width: 38px; height: 38px;"
+          >
+            <i class="bi bi-search fs-5"></i>
+          </button>
+        
+        <!-- Brand Logo & Global Search -->
+        <div class="d-flex align-items-center gap-3">
+          <a class="navbar-brand d-flex align-items-center fw-bold text-primary fs-4 m-0" href="#">
+            <i class="bi bi-intersect me-2 fs-3"></i>
+            <span>DevConnect</span>
+          </a>
+
+          <!-- Search Input Form -->
+          <form class="d-none d-sm-block position-relative" role="search" onsubmit="event.preventDefault();">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text bg-light border-end-0 navbar-search-input text-muted">
+                <i class="bi bi-search"></i>
+              </span>
+              <input 
+                type="search" 
+                class="form-control bg-light border-start-0 navbar-search-input ps-0" 
+                placeholder="Find posts, people, tags..." 
+                aria-label="Search" 
+                style="max-width: 240px;"
+              >
+            </div>
+          </form>
+        </div>
+
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links & Profile Dropdown -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+          <ol class="navbar-nav align-items-lg-center gap-lg-1 my-2 my-lg-0">
+            <li class="nav-item">
+              <a class="nav-link nav-icon-link" target="_self" href="index.html" aria-label="Home">
+                <i class="bi bi-house-door-fill"></i>
+                <span class="d-none d-lg-inline">Home</span>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link nav-icon-link" target="_self" href="MyNetwork.html" aria-label="My Network">
+                <i class="bi bi-people-fill"></i>
+                <span class="d-none d-lg-inline">Network</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link nav-icon-link" target="_blank" href="Jobs.html" aria-label="Jobs">
+                <i class="bi bi-briefcase-fill"></i>
+                <span class="d-none d-lg-inline">Jobs</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link nav-icon-link position-relative" href="Messages.html" target="_self" aria-label="Messages">
+                <i class="bi bi-chat-dots-fill"></i>
+                <span class="d-none d-lg-inline">Messaging</span>
+                <span class="position-absolute top-1 start-50 translate-middle-x badge rounded-pill bg-danger d-none d-lg-inline" style="font-size: 0.65rem; top: 2px;">
+                  3
+                </span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link nav-icon-link position-relative" target="_self" href="Notification.html" aria-label="Notifications">
+                <i class="bi bi-bell-fill"></i>
+                <span class="d-none d-lg-inline">Notifications</span>
+                <span class="position-absolute top-1 start-50 translate-middle-x badge rounded-pill bg-primary d-none d-lg-inline" style="font-size: 0.65rem; top: 2px;">
+                  5
+                </span>
+              </a>
+            </li>
+
+            <!-- Profile Dropdown -->
+            <li class="nav-item dropdown ms-lg-2 border-start-lg ps-lg-2">
+              <a class="nav-link dropdown-toggle d-flex align-items-center gap-2 py-1" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img 
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" 
+                  alt="Alex Morgan Avatar" 
+                  class="rounded-circle border"
+                  width="50" 
+                  height="50"
+                  style="object-fit: cover;"
+                >
+                <div class="d-lg-none d-inline-block">
+                  <span class="fw-semibold">Alex Morgan</span>
+                  <small class="text-muted d-block">View Profile</small>
+                </div>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="profileDropdown">
+                <li class="px-3 py-2 border-bottom">
+                  <div class="fw-bold">Alex Morgan</div>
+                  <small class="text-muted">alex.morgan@devconnect.io</small>
+                </li>
+                <li><a class="dropdown-item py-2" href="index.html"><i class="bi bi-person me-2"></i>View Profile</a></li>
+                <li><a class="dropdown-item py-2" href="#" data-bs-toggle="modal" data-bs-target="#editProfileModal"><i class="bi bi-gear me-2"></i>Account & Settings</a></li>
+                <li><a class="dropdown-item py-2" href="#"><i class="bi bi-question-circle me-2"></i>Help & Support</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item py-2 text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i>Sign Out</a></li>
+              </ul>
+            </li>
+
+          </ol>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <!--MAIN CONTAINER & LAYOUT-->
+  <main class="container my-4">
+    <!--2. PROFILE HEADER / BANNER SECTION-->
+    <section class="card border-0 shadow-sm rounded-3 overflow-hidden mb-4 bg-white" aria-label="Profile Header">
+      
+      <!-- Background Cover Photo Banner -->
+      <div class="profile-banner-container position-relative">
+        <img 
+          src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80" 
+          alt="Profile cover banner showing abstract digital wave art" 
+          class="profile-cover-img"
+        >
+        <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-3 shadow-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;" title="Update Cover Photo">
+          <i class="bi bi-camera"></i>
+        </button>
+      </div>
+
+      <!-- Profile Header Body -->
+      <div class="card-body px-4 pb-4 pt-0">
+        <div class="row align-items-end">
+          
+          <!-- Round Profile Avatar (Overlapping banner) -->
+          <div class="col-12 col-md-auto profile-avatar-wrapper text-center text-md-start">
+            <div class="position-relative d-inline-block">
+              <img 
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" 
+                alt="Portrait of Alex Morgan" 
+                class="rounded-circle profile-avatar-img shadow"
+              >
+              <span class="position-absolute bottom-0 end-0 p-2 bg-success border border-black rounded-circle" title="Online now">
+                <span class="visually-hidden">Online</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- User Quick Actions (Desktop & Tablet) -->
+          <div class="col-12 col-md ms-md-auto mb-3 text-center text-md-end">
+            <div class="d-flex flex-wrap justify-content-center justify-content-md-end gap-2">
+              <button class="btn btn-outline-primary btn-sm px-3 fw-medium" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                <i class="bi bi-pencil-square me-1"></i>Edit Profile
+              </button>
+              <button 
+                class="btn btn-primary btn-sm px-3 fw-medium" 
+                type="button"
+                onclick="this.classList.toggle('btn-primary'); this.classList.toggle('btn-outline-secondary'); this.innerHTML = this.classList.contains('btn-primary') ? '<i class=\'bi bi-person-plus-fill me-1\'></           i>Follow / Connect' : '<i class=\'bi bi-check2 me-1\'></i>Following';">
+                <i class="bi bi-person-plus-fill me-1"></i>Follow / Connect
+              </button>
+              <button class="btn btn-outline-secondary btn-sm px-3 fw-medium">
+                <i class="bi bi-envelope-fill me-1"></i>Message
+              </button>
+              <div class="dropdown d-inline-block">
+                <button class="btn btn-light btn-sm border rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="More options" style="width: 32px; height: 32px;">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-share me-2"></i>Share profile via link</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-pdf me-2"></i>Save profile to PDF</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-flag me-2"></i>Report profile</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- User Information Details -->
+        <div class="row mt-2">
+          <div class="col-12 col-lg-8">
+            <h1 class="h3 fw-bold mb-1 d-flex align-items-center justify-content-center justify-content-md-start gap-2">
+              <span>Alex Morgan</span>
+              <i class="bi bi-patch-check-fill text-primary fs-5" title="Verified Professional"></i>
+              <span class="badge bg-primary-subtle text-primary border border-primary-subtle fs-6 rounded-pill fw-normal">Pro</span>
+            </h1>
+            
+            <p class="fs-6 text-dark fw-medium mb-1 text-center text-md-start">
+              Lead Full-Stack Engineer &amp; UI/UX Architect | Open Source Maintainer | Building Responsive Web &amp; AI Applications
+            </p>
+            
+            <p class="text-muted small mb-2 text-center text-md-start">
+              <i class="bi bi-geo-alt-fill text-danger me-1"></i>San Francisco Bay Area, CA 
+              <span class="mx-2">•</span> 
+              <a href="#" class="text-decoration-none fw-semibold text-primary" data-bs-toggle="modal" data-bs-target="#contactInfoModal">Contact Info</a>
+              <span class="mx-2">•</span> 
+              <span class="text-dark fw-semibold">14.8K</span> followers
+              <span class="mx-1">•</span> 
+              <span class="text-primary fw-semibold">500+</span> connections
+            </p>
+
+            <!-- Highlights / Open to Work Pill -->
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-start gap-2 mt-3">
+              <div class="alert alert-info py-2 px-3 mb-0 d-flex align-items-center gap-2 rounded-3 border-0 bg-info-subtle text-info-emphasis w-100">
+                <i class="bi bi-briefcase-fill fs-5"></i>
+                <div class="small">
+                  <strong>Open to work:</strong> Senior Frontend Architect, Full-Stack Lead roles. 
+                  <a href="#" class="alert-link text-decoration-none">See details</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Affiliated Company / Education (Right Meta on Header) -->
+          <div class="col-12 col-lg-4 mt-3 mt-lg-0 text-md-start text-lg-end d-none d-md-block">
+            <ul class="list-unstyled small text-muted mb-0">
+              <li class="mb-2 d-flex align-items-center justify-content-md-start justify-content-lg-end gap-2">
+                <i class="bi bi-building text-primary fs-5"></i>
+                <span class="fw-semibold text-dark">Apex Cloud Systems</span>
+              </li>
+              <li class="d-flex align-items-center justify-content-md-start justify-content-lg-end gap-2">
+                <i class="bi bi-mortarboard text-secondary fs-5"></i>
+                <span class="fw-semibold text-dark">UC Berkeley (B.S. CompSci)</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 3. MAIN LAYOUT GRID (3-Column Desktop / Responsive Breakpoints)-->
+    <div class="row g-4">
+
+      <!--LEFT SIDEBAR: Stats, About & Quick Navigation-->
+      <aside class="col-12 col-md-5 col-lg-3" aria-label="Profile sidebar and statistics">
+        
+        <!-- Profile Analytics & Stats Card -->
+        <div class="card border-0 shadow-sm rounded-3 mb-4 bg-white">
+          <div class="card-header bg-white border-0 pt-3 pb-2">
+            <h2 class="h6 fw-bold mb-0 text-uppercase text-muted" style="letter-spacing: 0.5px; font-size: 0.75rem;">
+              Profile Analytics
+            </h2>
+          </div>
+          <div class="card-body p-0">
+            <div class="list-group list-group-flush rounded-bottom-3">
+              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-3 py-2 border-0">
+                <span class="text-muted small"><i class="bi bi-eye me-2 text-primary"></i>Profile views</span>
+                <span class="badge bg-light text-primary fw-bold">2,419</span>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-3 py-2 border-0">
+                <span class="text-muted small"><i class="bi bi-graph-up me-2 text-success"></i>Post impressions</span>
+                <span class="badge bg-light text-success fw-bold">38.4K</span>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-3 py-2 border-0">
+                <span class="text-muted small"><i class="bi bi-search me-2 text-warning"></i>Search appearances</span>
+                <span class="badge bg-light text-dark fw-bold">482</span>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-3 py-2 border-0">
+                <span class="text-muted small"><i class="bi bi-file-earmark-post me-2 text-info"></i>Total Posts</span>
+                <span class="badge bg-light text-dark fw-bold">128</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- About / Personal Details Card -->
+        <div class="card border-0 shadow-sm rounded-3 mb-4 bg-white">
+          <div class="card-header bg-white border-bottom-0 pt-3 pb-0 d-flex justify-content-between align-items-center">
+            <h2 class="h6 fw-bold mb-0">About</h2>
+            <button class="btn btn-link btn-sm text-decoration-none p-0 text-muted" data-bs-toggle="modal" data-bs-target="#editProfileModal" title="Edit About">
+              <i class="bi bi-pencil"></i>
+            </button>
+          </div>
+          <div class="card-body small text-secondary">
+            <p class="mb-3">
+              Passionate software engineer with 7+ years of experience building modern, accessible web applications and distributed cloud systems. Specialized in HTML5/CSS3, Bootstrap, React, TypeScript, and developer tooling.
+            </p>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2 d-flex align-items-center gap-2">
+                <i class="bi bi-globe text-muted"></i>
+                <a href="https://alexmorgan.dev" target="_blank" rel="noopener" class="text-decoration-none text-primary">alexmorgan.dev</a>
+              </li>
+              <li class="mb-2 d-flex align-items-center gap-2">
+                <i class="bi bi-github text-muted"></i>
+                <a href="https://github.com" target="_blank" rel="noopener" class="text-decoration-none text-primary">github.com/alexmorgan</a>
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <i class="bi bi-calendar3 text-muted"></i>
+                <span>Joined DevConnect March 2019</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Quick Navigation / Shortcuts -->
+        <div class="card border-0 shadow-sm rounded-3 mb-4 bg-white">
+          <div class="card-body p-2">
+            <div class="list-group list-group-flush">
+              <a href="#" class="list-group-item list-group-item-action border-0 rounded-2 py-2 d-flex align-items-center gap-3">
+                <i class="bi bi-bookmark-fill text-warning"></i>
+                <span class="small fw-medium">Saved Items &amp; Bookmarks</span>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action border-0 rounded-2 py-2 d-flex align-items-center gap-3">
+                <i class="bi bi-collection-play-fill text-danger"></i>
+                <span class="small fw-medium">Courses &amp; Learning</span>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action border-0 rounded-2 py-2 d-flex align-items-center gap-3">
+                <i class="bi bi-people-fill text-primary"></i>
+                <span class="small fw-medium">Developer Groups (8)</span>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action border-0 rounded-2 py-2 d-flex align-items-center gap-3">
+                <i class="bi bi-newspaper text-info"></i>
+                <span class="small fw-medium">Subscribed Newsletters</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+
+      <!--CENTER CONTENT: Post Creation Box & Activity Feed-->
+      <section class="col-12 col-md-7 col-lg-6" aria-label="User activity feed and posts">
+
+        <!-- 1. Post Creation Card ("What's on your mind?") -->
+        <div class="card border-0 shadow-sm rounded-3 mb-4 bg-white">
+          <div class="card-body">
+            
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <img 
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" 
+                alt="Your Avatar" 
+                class="rounded-circle border"
+                width="48" 
+                height="48"
+                style="object-fit: cover;"
+              >
+              <!-- Trigger opens the Create Post Modal -->
+              <div 
+                class="post-trigger-input flex-grow-1" 
+                role="button" 
+                tabindex="0"
+                data-bs-toggle="modal" 
+                data-bs-target="#createPostModal"
+                aria-label="Start a post"
+              >
+                <span>What's on your mind, Alex? Share an update...</span>
+              </div>
+            </div>
+
+            <hr class="my-2 text-muted opacity-25">
+
+            <!-- Post Action Buttons (Media, Event, Article) -->
+            <div class="d-flex justify-content-between align-items-center pt-2">
+              <button class="btn btn-sm btn-light border-0 d-flex align-items-center gap-2 text-muted fw-medium py-2 px-3" data-bs-toggle="modal" data-bs-target="#createPostModal">
+                <i class="bi bi-image text-primary fs-5"></i>
+                <span class="d-none d-sm-inline">Media</span>
+              </button>
+              <button class="btn btn-sm btn-light border-0 d-flex align-items-center gap-2 text-muted fw-medium py-2 px-3" data-bs-toggle="modal" data-bs-target="#createPostModal">
+                <i class="bi bi-calendar-event text-warning fs-5"></i>
+                <span class="d-none d-sm-inline">Event</span>
+              </button>
+              <button class="btn btn-sm btn-light border-0 d-flex align-items-center gap-2 text-muted fw-medium py-2 px-3" data-bs-toggle="modal" data-bs-target="#createPostModal">
+                <i class="bi bi-newspaper text-danger fs-5"></i>
+                <span class="d-none d-sm-inline">Write Article</span>
+              </button>
+              <button class="btn btn-sm btn-light border-0 d-flex align-items-center gap-2 text-muted fw-medium py-2 px-3" data-bs-toggle="modal" data-bs-target="#createPostModal">
+                <i class="bi bi-bar-chart-line text-success fs-5"></i>
+                <span class="d-none d-sm-inline">Create Poll</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Feed Filter Bar -->
+        <div class="d-flex align-items-center justify-content-between mb-3 px-1">
+          <h2 class="h6 fw-bold mb-0 text-muted text-uppercase" style="letter-spacing: 0.5px; font-size: 0.75rem;">
+            Activity &amp; Posts
+          </h2>
+          <div class="dropdown">
+            <button class="btn btn-link btn-sm text-decoration-none text-muted dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Sort by: <span class="fw-semibold text-dark">Recent</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li><a class="dropdown-item active" href="#">Recent</a></li>
+              <li><a class="dropdown-item" href="#">Top Engagement</a></li>
+              <li><a class="dropdown-item" href="#">Articles Only</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Container where new posts will be dynamically inserted -->
+        <div id="postsFeedContainer">
+
+          <!-- POST 1: Image / Technical Announcement Post -->
+          <article class="card border-0 shadow-sm rounded-3 mb-4 bg-white feed-card" id="post-1">
+            
+            <!-- Card Header: Author info & options -->
+            <div class="card-header bg-white border-0 pt-3 pb-0">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="d-flex align-items-center gap-3">
+                  <img 
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" 
+                    alt="Alex Morgan" 
+                    class="rounded-circle"
+                    width="46" 
+                    height="46"
+                    style="object-fit: cover;"
+                  >
+                  <div>
+                    <h3 class="h6 fw-bold mb-0">
+                      <a href="#" class="text-decoration-none text-dark">Alex Morgan</a>
+                      <span class="text-muted fw-normal">・ 1st</span>
+                    </h3>
+                    <small class="text-muted d-block" style="font-size: 0.75rem;">
+                      Lead Full-Stack Engineer &amp; UI/UX Architect
+                    </small>
+                    <small class="text-muted" style="font-size: 0.7rem;">
+                      <time datetime="2026-11-02T16:00:00">3 hrs ago</time> • <i class="bi bi-globe-americas" title="Public post"></i>
+                    </small>
+                  </div>
+                </div>
+
+                <!-- Post Options Dropdown -->
+                <div class="dropdown">
+                  <button class="btn btn-light btn-sm border-0 rounded-circle text-muted" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-three-dots"></i>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-bookmark me-2"></i>Save post</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-link-45deg me-2"></i>Copy link to post</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-code-slash me-2"></i>Embed this post</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-eye-slash me-2"></i>Hide this post</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Body: Content & Media -->
+            <div class="card-body pt-3 pb-2">
+              <p class="card-text mb-3">
+                🚀 Excited to share that version 3.0 of our open-source responsive design system is officially live! We redesigned all core components to take full advantage of modern CSS Grid, Bootstrap 5 utilities, and strict accessibility standards (WCAG AAA compliant).
+              </p>
+              <p class="card-text mb-3">
+                Special thanks to everyone in the dev community who tested beta builds and contributed PRs! Check out the live interactive playground below.
+              </p>
+              <div class="mb-3">
+                <a href="#" class="text-decoration-none text-primary fw-medium me-1">#WebDevelopment</a>
+                <a href="#" class="text-decoration-none text-primary fw-medium me-1">#Bootstrap5</a>
+                <a href="#" class="text-decoration-none text-primary fw-medium me-1">#Frontend</a>
+                <a href="#" class="text-decoration-none text-primary fw-medium me-1">#OpenSource</a>
+                <a href="#" class="text-decoration-none text-primary fw-medium">#UIUX</a>
+              </div>
+
+              <!-- Media Attachment Image -->
+              <figure class="mb-2">
+                <img 
+                  src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&q=80" 
+                  alt="Code on laptop screen displaying web layout components" 
+                  class="img-fluid rounded-2 w-100 border"
+                  style="max-height: 380px; object-fit: cover;"
+                >
+                <figcaption class="visually-hidden">Preview screenshot of modern component architecture</figcaption>
+              </figure>
+
+              <!-- Engagement Stats Counter -->
+              <div class="d-flex justify-content-between align-items-center text-muted small py-2 border-bottom">
+                <div class="d-flex align-items-center gap-1">
+                  <span class="badge rounded-circle bg-primary p-1 text-white" style="font-size: 0.65rem;">
+                    <i class="bi bi-hand-thumbs-up-fill"></i>
+                  </span>
+                  <span class="badge rounded-circle bg-danger p-1 text-white" style="font-size: 0.65rem;">
+                    <i class="bi bi-heart-fill"></i>
+                  </span>
+                  <span class="badge rounded-circle bg-success p-1 text-white" style="font-size: 0.65rem;">
+                    <i class="bi bi-lightbulb-fill"></i>
+                  </span>
+                  <span class="ms-1 post-likes-counter">248</span>
+                </div>
+                <div>
+                  <span class="me-2">42 comments</span>
+                  <span>18 reposts</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Footer: Engagement Action Buttons -->
+            <div class="card-footer bg-white border-0 py-1">
+              <div class="d-flex justify-content-between align-items-center">
+                
+                <button class="btn post-action-btn flex-fill d-flex align-items-center justify-content-center gap-1 like-btn" onclick="toggleLike(this, 248)">
+                  <i class="bi bi-hand-thumbs-up"></i>
+                  <span>Like</span>
+                </button>
+
+                <button class="btn post-action-btn flex-fill d-flex align-items-center justify-content-center gap-1" data-bs-toggle="collapse" data-bs-target="#comments-post-1" aria-expanded="false" aria-controls="comments-post-1">
+                  <i class="bi bi-chat-text"></i>
+                  <span>Comment</span>
+                </button>
+
+                <button class="btn post-action-btn flex-fill d-flex align-items-center justify-content-center gap-1" onclick="alert('Post link copied to clipboard!')">
+                  <i class="bi bi-arrow-repeat"></i>
+                  <span>Repost</span>
+                </button>
+
+                <button class="btn post-action-btn flex-fill d-flex align-items-center justify-content-center gap-1" onclick="alert('Message share window opened!')">
+                  <i class="bi bi-send"></i>
+                  <span>Send</span>
+                </button>
+
+              </div>
+
+              <!-- Collapsible Comment Section -->
+              <div class="collapse mt-3" id="comments-post-1">
+                <div class="p-3 bg-light rounded-3">
+                  
+                  <!-- New Comment Input Form -->
+                  <form class="d-flex gap-2 mb-3" onsubmit="addComment(event, 'comments-list-1')">
+                    <img 
+                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" 
+                      alt="Alex Morgan" 
+                      class="rounded-circle"
+                      width="36" 
+                      height="36"
+                      style="object-fit: cover;"
+                    >
+                    <div class="input-group">
+                      <input type="text" class="form-control form-control-sm rounded-start-pill bg-white" placeholder="Add a thoughtful comment..." required>
+                      <button class="btn btn-primary btn-sm rounded-end-pill px-3" type="submit">Post</button>
+                    </div>
+                  </form>
+
+                  <!-- Existing Comments List -->
+                  <div class="comments-list d-flex flex-column gap-2" id="comments-list-1">
+                    <div class="d-flex gap-2">
+                      <img 
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" 
+                        alt="Marcus Chen" 
+                        class="rounded-circle"
+                        width="32" 
+                        height="32"
+                        style="object-fit: cover;"
+                      >
+                      <div class="bg-white p-2 rounded-3 border flex-grow-1 small">
+                        <div class="d-flex justify-content-between">
+                          <span class="fw-bold">Marcus Chen</span>
+                          <span class="text-muted" style="font-size: 0.7rem;">1h ago</span>
+                        </div>
+                        <p class="mb-0 text-secondary">Huge congratulations Alex! The responsive layout documentation looks exceptionally crisp.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- POST 2: Discussion / Technical Knowledge Post -->
+          <article class="card border-0 shadow-sm rounded-3 mb-4 bg-white feed-card" id="post-2">
+            
+            <div class="card-header bg-white border-0 pt-3 pb-0">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="d-flex align-items-center gap-3">
+                  <img 
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" 
+                    alt="Alex Morgan" 
+                    class="rounded-circle"
+                    width="46" 
+                    height="46"
+                    style="object-fit: cover;"
+                  >
+                  <div>
+                    <h3 class="h6 fw-bold mb-0">
+                      <a href="#" class="text-decoration-none text-dark">Alex Morgan</a>
+                      <span class="text-muted fw-normal">・ 1st</span>
+                    </h3>
+                    <small class="text-muted d-block" style="font-size: 0.75rem;">
+                      Lead Full-Stack Engineer &amp; UI/UX Architect
+                    </small>
+                    <small class="text-muted" style="font-size: 0.7rem;">
+                      <time datetime="2026-11-01T12:00:00">Yesterday</time> • <i class="bi bi-globe-americas"></i>
+                    </small>
+                  </div>
+                </div>
+
+                <div class="dropdown">
+                  <button class="btn btn-light btn-sm border-0 rounded-circle text-muted" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-three-dots"></i>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-bookmark me-2"></i>Save post</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-link-45deg me-2"></i>Copy link</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body pt-3 pb-2">
+              <p class="card-text mb-2">
+                💡 <strong>Quick Frontend Tip:</strong> Don't overlook Bootstrap 5's responsive display and flex utilities before writing custom media queries in CSS!
+              </p>
+              
+              <div class="bg-light p-3 rounded-3 border font-monospace small mb-3">
+                <div class="text-primary fw-bold mb-1">// Hide right sidebar on mobile, display on desktop (lg):</div>
+                <div class="text-dark">&lt;aside class="col-12 col-lg-3 <strong>d-none d-lg-block</strong>"&gt;...&lt;/aside&gt;</div>
+                <div class="text-primary fw-bold mt-2 mb-1">// Clean flex alignment without manual margins:</div>
+                <div class="text-dark">&lt;div class="<strong>d-flex justify-content-between align-items-center</strong>"&gt;...&lt;/div&gt;</div>
+              </div>
+
+              <p class="card-text text-secondary mb-3">
+                What is your go-to Bootstrap 5 utility class that saves you the most time on every project? Let's discuss in the comments! 👇
+              </p>
+
+              <div class="d-flex justify-content-between align-items-center text-muted small py-2 border-bottom">
+                <div class="d-flex align-items-center gap-1">
+                  <span class="badge rounded-circle bg-primary p-1 text-white" style="font-size: 0.65rem;">
+                    <i class="bi bi-hand-thumbs-up-fill"></i>
+                  </span>
+                  <span class="badge rounded-circle bg-warning p-1 text-dark" style="font-size: 0.65rem;">
+                    <i class="bi bi-fire"></i>
+                  </span>
+                  <span class="ms-1 post-likes-counter">189</span>
+                </div>
+                <div>
+                  <span class="me-2">31 comments</span>
+                  <span>9 reposts</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-footer bg-white border-0 py-1">
+              <div class="d-flex justify-content-between align-items-center">
+                <button class="btn post-action-btn flex-fill d-flex align-items-center justify-content-center gap-1 like-btn" onclick="toggleLike(this, 189)">
+                  <i class="bi bi-hand-thumbs-up"></i>
+                  <span>Like</span>
+                </button>
+                <button class="btn post-action-btn flex-fill d-flex align-items-center justify-content-center gap-1" data-bs-toggle="collapse" data-bs-target="#comments-post-2" aria-expanded="false">
+                  <i class="bi bi-chat-text"></i>
+                  <span>Comment</span>
+                </button>
+                <button class="btn post-action-btn flex-fill d-flex align-items-center justify-content-center gap-1" onclick="alert('Post link copied!')">
+                  <i class="bi bi-arrow-repeat"></i>
+                  <span>Repost</span>
+                </button>
+                <button class="btn post-action-btn flex-fill d-flex align-items-center justify-content-center gap-1" onclick="alert('Message share window opened!')">
+                  <i class="bi bi-send"></i>
+                  <span>Send</span>
+                </button>
+              </div>
+
+              <div class="collapse mt-3" id="comments-post-2">
+                <div class="p-3 bg-light rounded-3">
+                  <form class="d-flex gap-2" onsubmit="addComment(event, 'comments-list-2')">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Alex Morgan" class="rounded-circle" width="36" height="36" style="object-fit: cover;">
+                    <div class="input-group">
+                      <input type="text" class="form-control form-control-sm rounded-start-pill bg-white" placeholder="Write your response..." required>
+                      <button class="btn btn-primary btn-sm rounded-end-pill px-3" type="submit">Post</button>
+                    </div>
+                  </form>
+                  <div class="comments-list d-flex flex-column gap-2 mt-3" id="comments-list-2"></div>
+                </div>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!--RIGHT SIDEBAR: Suggestions, Trending, Skills & Badge-->
+      <aside class="col-12 col-lg-3 d-none d-lg-block" aria-label="Suggested connections and trending topics">
+        
+        <!-- Suggested Connections Widget -->
+        <div class="card border-0 shadow-sm rounded-3 mb-4 bg-white">
+          <div class="card-header bg-white border-0 pt-3 pb-2 d-flex justify-content-between align-items-center">
+            <h2 class="h6 fw-bold mb-0">Suggested Connections</h2>
+            <a href="#" class="text-decoration-none small text-muted">View all</a>
+          </div>
+          
+          <div class="card-body p-0">
+            <div class="list-group list-group-flush">
+              
+              <!-- Connection 1 -->
+              <div class="list-group-item border-0 px-3 py-2 d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-2">
+                  <img 
+                    src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&q=80" 
+                    alt="Samantha Reed" 
+                    class="rounded-circle"
+                    width="42" 
+                    height="42"
+                    style="object-fit: cover;"
+                  >
+                  <div class="small">
+                    <div class="fw-semibold text-dark">Samantha Reed</div>
+                    <div class="text-muted" style="font-size: 0.72rem;">Cloud AI Architect</div>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary btn-sm rounded-pill px-2 py-1" onclick="this.innerHTML='Requested'; this.classList.replace('btn-outline-primary','btn-secondary');">
+                  <i class="bi bi-person-plus"></i>
+                </button>
+              </div>
+
+              <!-- Connection 2 -->
+              <div class="list-group-item border-0 px-3 py-2 d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-2">
+                  <img 
+                    src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=100&q=80" 
+                    alt="Emily Watson" 
+                    class="rounded-circle"
+                    width="42" 
+                    height="42"
+                    style="object-fit: cover;"
+                  >
+                  <div class="small">
+                    <div class="fw-semibold text-dark">Emily Watson</div>
+                    <div class="text-muted" style="font-size: 0.72rem;">Senior Product Designer</div>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary btn-sm rounded-pill px-2 py-1" onclick="this.innerHTML='Requested'; this.classList.replace('btn-outline-primary','btn-secondary');">
+                  <i class="bi bi-person-plus"></i>
+                </button>
+              </div>
+
+              <!-- Connection 3 -->
+              <div class="list-group-item border-0 px-3 py-2 d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-2">
+                  <img 
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" 
+                    alt="David Miller" 
+                    class="rounded-circle"
+                    width="42" 
+                    height="42"
+                    style="object-fit: cover;"
+                  >
+                  <div class="small">
+                    <div class="fw-semibold text-dark">David Miller</div>
+                    <div class="text-muted" style="font-size: 0.72rem;">Staff Systems Engineer</div>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary btn-sm rounded-pill px-2 py-1" onclick="this.innerHTML='Requested'; this.classList.replace('btn-outline-primary','btn-secondary');">
+                  <i class="bi bi-person-plus"></i>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Trending Topics / News Widget -->
+        <div class="card border-0 shadow-sm rounded-3 mb-4 bg-white">
+          <div class="card-header bg-white border-0 pt-3 pb-2">
+            <h2 class="h6 fw-bold mb-0">Trending in Tech</h2>
+          </div>
+          <div class="card-body p-0">
+            <ul class="list-group list-group-flush small">
+              <li class="list-group-item border-0 px-3 py-2">
+                <a href="#" class="text-decoration-none text-dark fw-semibold d-block">#Bootstrap5Components</a>
+                <span class="text-muted" style="font-size: 0.75rem;">12.4K posts • Trending</span>
+              </li>
+              <li class="list-group-item border-0 px-3 py-2">
+                <a href="#" class="text-decoration-none text-dark fw-semibold d-block">Web Components &amp; React</a>
+                <span class="text-muted" style="font-size: 0.75rem;">8.9K posts • Developer Tools</span>
+              </li>
+              <li class="list-group-item border-0 px-3 py-2">
+                <a href="#" class="text-decoration-none text-dark fw-semibold d-block">Accessible Web Design (A11y)</a>
+                <span class="text-muted" style="font-size: 0.75rem;">6.1K posts • UX Design</span>
+              </li>
+              <li class="list-group-item border-0 px-3 py-2">
+                <a href="#" class="text-decoration-none text-dark fw-semibold d-block">Autonomous AI Coding</a>
+                <span class="text-muted" style="font-size: 0.75rem;">24.5K posts • Artificial Intelligence</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Skills & Badges Widget -->
+        <div class="card border-0 shadow-sm rounded-3 mb-4 bg-white">
+          <div class="card-header bg-white border-0 pt-3 pb-2 d-flex justify-content-between align-items-center">
+            <h2 class="h6 fw-bold mb-0">Skills &amp; Endorsements</h2>
+            <button class="btn btn-link btn-sm text-decoration-none p-0 text-muted" title="Add skill">
+              <i class="bi bi-plus-lg"></i>
+            </button>
+          </div>
+          <div class="card-body pt-2 pb-3">
+            <div class="d-flex flex-wrap gap-2">
+              <span class="skill-badge"><i class="bi bi-code-slash me-1"></i>HTML5</span>
+              <span class="skill-badge"><i class="bi bi-bootstrap-fill me-1"></i>Bootstrap 5</span>
+              <span class="skill-badge"><i class="bi bi-filetype-css me-1"></i>CSS3 / Flexbox</span>
+              <span class="skill-badge"><i class="bi bi-filetype-js me-1"></i>JavaScript (ES6+)</span>
+              <span class="skill-badge"><i class="bi bi-layers-fill me-1"></i>Responsive Design</span>
+              <span class="skill-badge"><i class="bi bi-universal-access me-1"></i>WCAG A11y</span>
+              <span class="skill-badge"><i class="bi bi-git me-1"></i>Git &amp; GitHub</span>
+              <span class="skill-badge"><i class="bi bi-cloud-check-fill me-1"></i>Cloud Architecture</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mini Footer Links -->
+        <footer class="text-center text-muted small px-2">
+          <div class="d-flex flex-wrap justify-content-center gap-2 mb-2" style="font-size: 0.75rem;">
+            <a href="#" class="text-decoration-none text-muted">About</a>
+            <a href="#" class="text-decoration-none text-muted">Accessibility</a>
+            <a href="#" class="text-decoration-none text-muted">Help Center</a>
+            <a href="#" class="text-decoration-none text-muted">Privacy &amp; Terms</a>
+          </div>
+          <p class="mb-0 text-secondary" style="font-size: 0.7rem;">
+            DevConnect Platform © 2026. Built with Bootstrap 5.
+          </p>
+        </footer>
+
+      </aside>
+
+    </div><!-- /row -->
+
+  </main>
+
+
+  <!--4. MODALS (Create Post, Edit Profile, Contact Info)-->
+
+  <!-- Modal: Create Post -->
+  <div class="modal fade" id="createPostModal" tabindex="-1" aria-labelledby="createPostModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow">
+        
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="createPostModalLabel">Create a Post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <form onsubmit="handleNewPostSubmit(event)">
+          <div class="modal-body">
+            
+            <!-- User Info & Audience Selector -->
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <img 
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" 
+                alt="Alex Morgan" 
+                class="rounded-circle"
+                width="44" 
+                height="44"
+                style="object-fit: cover;"
+              >
+              <div>
+                <div class="fw-semibold">Alex Morgan</div>
+                <button type="button" class="btn btn-outline-secondary btn-sm py-0 px-2 rounded-pill small" style="font-size: 0.75rem;">
+                  <i class="bi bi-globe me-1"></i>Anyone <i class="bi bi-caret-down-fill ms-1"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Post Text Area -->
+            <div class="mb-3">
+              <label for="postTextInput" class="visually-hidden">Post Content</label>
+              <textarea 
+                class="form-control border-0 p-0 shadow-none fs-5" 
+                id="postTextInput" 
+                rows="4" 
+                placeholder="What do you want to talk about?" 
+                required
+              ></textarea>
+            </div>
+
+            <!-- Optional Image URL -->
+            <div class="mb-3">
+              <label for="postImageInput" class="form-label small text-muted mb-1">Optional Image URL</label>
+              <input 
+                type="url" 
+                class="form-control form-control-sm" 
+                id="postImageInput" 
+                placeholder="https://example.com/image.jpg"
+              >
+            </div>
+
+            <!-- Media Attachment Bar -->
+            <div class="d-flex gap-2 p-2 border rounded-3 bg-light align-items-center">
+              <span class="small text-muted me-auto">Add to your post:</span>
+              <button type="button" class="btn btn-sm btn-light border-0 text-primary" title="Add Photo"><i class="bi bi-image fs-5"></i></button>
+              <button type="button" class="btn btn-sm btn-light border-0 text-success" title="Add Video"><i class="bi bi-play-btn fs-5"></i></button>
+              <button type="button" class="btn btn-sm btn-light border-0 text-warning" title="Add Event"><i class="bi bi-calendar-event fs-5"></i></button>
+              <button type="button" class="btn btn-sm btn-light border-0 text-danger" title="Write article"><i class="bi bi-newspaper fs-5"></i></button>
+            </div>
+
+          </div>
+
+          <div class="modal-footer border-0">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary px-4 fw-semibold">Post</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal: Edit Profile -->
+  <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow">
+        
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="editProfileModalLabel">Edit Profile Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <form onsubmit="handleEditProfileSubmit(event)">
+          <div class="modal-body">
+            
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="fullNameInput" class="form-label fw-semibold">Full Name</label>
+                <input type="text" class="form-control" id="fullNameInput" value="Alex Morgan" required>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="headlineInput" class="form-label fw-semibold">Headline</label>
+                <input type="text" class="form-control" id="headlineInput" value="Lead Full-Stack Engineer & UI/UX Architect" required>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="locationInput" class="form-label fw-semibold">Location</label>
+                <input type="text" class="form-control" id="locationInput" value="San Francisco Bay Area, CA">
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="companyInput" class="form-label fw-semibold">Current Company</label>
+                <input type="text" class="form-control" id="companyInput" value="Apex Cloud Systems">
+              </div>
+
+              <div class="col-12">
+                <label for="bioInput" class="form-label fw-semibold">About / Summary Bio</label>
+                <textarea class="form-control" id="bioInput" rows="3">Passionate software engineer with 7+ years of experience building modern, accessible web applications and distributed cloud systems.</textarea>
+              </div>
+
+              <div class="col-12">
+                <label for="websiteInput" class="form-label fw-semibold">Portfolio Website</label>
+                <input type="url" class="form-control" id="websiteInput" value="https://alexmorgan.dev">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary px-4 fw-semibold">Save Changes</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal: Contact Info -->
+  <div class="modal fade" id="contactInfoModal" tabindex="-1" aria-labelledby="contactInfoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow">
+        
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="contactInfoModalLabel">Alex Morgan's Contact Info</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item px-0 d-flex align-items-center gap-3">
+              <i class="bi bi-envelope-at fs-4 text-primary"></i>
+              <div>
+                <span class="d-block fw-semibold">Email</span>
+                <a href="mailto:alex.morgan@devconnect.io" class="text-decoration-none">alex.morgan@devconnect.io</a>
+              </div>
+            </li>
+            <li class="list-group-item px-0 d-flex align-items-center gap-3">
+              <i class="bi bi-globe fs-4 text-primary"></i>
+              <div>
+                <span class="d-block fw-semibold">Portfolio</span>
+                <a href="https://alexmorgan.dev" target="_blank" rel="noopener" class="text-decoration-none">https://alexmorgan.dev</a>
+              </div>
+            </li>
+            <li class="list-group-item px-0 d-flex align-items-center gap-3">
+              <i class="bi bi-github fs-4 text-primary"></i>
+              <div>
+                <span class="d-block fw-semibold">GitHub</span>
+                <a href="https://github.com" target="_blank" rel="noopener" class="text-decoration-none">github.com/alexmorgan</a>
+              </div>
+            </li>
+            <li class="list-group-item px-0 d-flex align-items-center gap-3">
+              <i class="bi bi-telephone fs-4 text-primary"></i>
+              <div>
+                <span class="d-block fw-semibold">Phone</span>
+                <span class="text-muted">+1 (555) 382-9102 (Mobile)</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!--5. BOOTSTRAP 5 JAVASCRIPT BUNDLE & INTERACTION SCRIPTS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <script>
+    // Toggle Like interaction
+    function toggleLike(buttonElement, initialCount) {
+      const isLiked = buttonElement.classList.contains('liked');
+      const counterElement = buttonElement.closest('article').querySelector('.post-likes-counter');
+      let currentLikes = parseInt(counterElement.innerText, 10);
+
+      if (isLiked) {
+        buttonElement.classList.remove('liked');
+        buttonElement.querySelector('i').className = 'bi bi-hand-thumbs-up';
+        counterElement.innerText = currentLikes - 1;
+      } else {
+        buttonElement.classList.add('liked');
+        buttonElement.querySelector('i').className = 'bi bi-hand-thumbs-up-fill text-primary';
+        counterElement.innerText = currentLikes + 1;
+      }
+    }
+
+    // Add Comment dynamically
+    function addComment(event, targetContainerId) {
+      event.preventDefault();
+      const input = event.target.querySelector('input');
+      const text = input.value.trim();
+      if (!text) return;
+
+      const container = document.getElementById(targetContainerId);
+      const newCommentDiv = document.createElement('div');
+      newCommentDiv.className = 'd-flex gap-2';
+      newCommentDiv.innerHTML = `
+        <img 
+          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" 
+          alt="Alex Morgan" 
+          class="rounded-circle"
+          width="32" 
+          height="32"
+          style="object-fit: cover;"
+        >
+        <div class="bg-white p-2 rounded-3 border flex-grow-1 small">
+          <div class="d-flex justify-content-between">
+            <span class="fw-bold">Alex Morgan</span>
+            <span class="text-muted" style="font-size: 0.7rem;">Just now</span>
+          </div>
+          <p class="mb-0 text-secondary">${escapeHtml(text)}</p>
+        </div>
+      `;
+
+      container.appendChild(newCommentDiv);
+      input.value = '';
+    }
+
+    // Handle new post creation from modal
+    function handleNewPostSubmit(event) {
+      event.preventDefault();
+      const textarea = document.getElementById('postTextInput');
+      const imgInput = document.getElementById('postImageInput');
+      const text = textarea.value.trim();
+      const imageUrl = imgInput.value.trim();
+
+      if (!text) return;
+
+      const postsContainer = document.getElementById('postsFeedContainer');
+      const newArticle = document.createElement('article');
+      newArticle.className = 'card border-0 shadow-sm rounded-3 mb-4 bg-white feed-card';
+
+      let mediaHtml = '';
+      if (imageUrl) {
+        mediaHtml = `
+          <figure class="mb-2">
+            <img src="${escapeHtml(imageUrl)}" alt="Post image" class="img-fluid rounded-2 w-100 border" style="max-height: 380px; object-fit: cover;">
+          </figure>
+        `;
+      }
+
+      newArticle.innerHTML = `
+        <div class="card-header bg-white border-0 pt-3 pb-0">
+          <div class="d-flex justify-content-between align-items-start">
+            <div class="d-flex align-items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Alex Morgan" class="rounded-circle" width="46" height="46" style="object-fit: cover;">
+              <div>
+                <h3 class="h6 fw-bold mb-0">
+                  <a href="#" class="text-decoration-none text-dark">Alex Morgan</a>
+                  <span class="text-muted fw-normal">・ 1st</span>
+                </h3>
+                <small class="text-muted d-block" style="font-size: 0.75rem;">Lead Full-Stack Engineer &amp; UI/UX Architect</small>
+                <small class="text-muted" style="font-size: 0.7rem;">Just now • <i class="bi bi-globe-americas"></i></small>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-light btn-sm border-0 rounded-circle text-muted" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body pt-3 pb-2">
+          <p class="card-text mb-3">${escapeHtml(text)}</p>
+          ${mediaHtml}
+          <div class="d-flex justify-content-between align-items-center text-muted small py-2 border-bottom">
+            <div class="d-flex align-items-center gap-1">
+              <span class="badge rounded-circle bg-primary p-1 text-white" style="font-size: 0.65rem;"><i class="bi bi-hand-thumbs-up-fill"></i></span>
+              <span class="ms-1 post-likes-counter">1</span>
+            </div>
+            <div><span>0 comments</span></div>
+          </div>
+        </div>
+        <div class="card-footer bg-white border-0 py-1">
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="btn post-action-btn flex-fill d-flex align-items-center justify-content-center gap-1 like-btn" onclick="toggleLike(this, 1)">
+              <i class="bi bi-hand-thumbs-up"></i>
+              <span>Like</span>
+            </button>
+            <button class="btn post-action-btn flex-fill d-flex align-items-center justify-content-center gap-1" onclick="alert('Comment feature active!')">
+              <i class="bi bi-chat-text"></i>
+              <span>Comment</span>
+            </button>
+            <button class="btn post-action-btn flex-fill d-flex align-items-center justify-content-center gap-1" onclick="alert('Link copied!')">
+              <i class="bi bi-arrow-repeat"></i>
+              <span>Repost</span>
+            </button>
+            <button class="btn post-action-btn flex-fill d-flex align-items-center justify-content-center gap-1">
+              <i class="bi bi-send"></i>
+              <span>Send</span>
+            </button>
+          </div>
+        </div>
+      `;
+
+      // Prepend newly created post to top of feed
+      postsContainer.prepend(newArticle);
+
+      // Reset & hide modal
+      textarea.value = '';
+      imgInput.value = '';
+      const modalEl = document.getElementById('createPostModal');
+      const modal = bootstrap.Modal.getInstance(modalEl);
+      if (modal) modal.hide();
+    }
+
+    // Handle Edit Profile Save
+    function handleEditProfileSubmit(event) {
+      event.preventDefault();
+      const newName = document.getElementById('fullNameInput').value.trim();
+      const newHeadline = document.getElementById('headlineInput').value.trim();
+
+      if (newName) {
+        document.querySelector('h1 span').innerText = newName;
+      }
+      if (newHeadline) {
+        document.querySelector('p.fs-6').innerText = newHeadline;
+      }
+
+      const modalEl = document.getElementById('editProfileModal');
+      const modal = bootstrap.Modal.getInstance(modalEl);
+      if (modal) modal.hide();
+      alert('Profile updated successfully!');
+    }
+
+    // Helper to prevent XSS in text injection
+    function escapeHtml(string) {
+      return String(string)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+  </script>
+
+</body>
+</html>
